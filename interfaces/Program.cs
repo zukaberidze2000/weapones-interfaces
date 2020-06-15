@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 
 namespace ProjN3
 {
@@ -7,23 +8,55 @@ namespace ProjN3
     {
         static void Main(string[] args)
         {
-            List<Weapone> arsenal = new List<Weapone>();
-
-            Weapone smg = new Weapone("smg",50);
-            Weapone pistol = new Weapone("pistol",15);
-            Weapone rifle = new Weapone("rifle",30);
-
-            arsenal.Add(smg);
-            arsenal.Add(pistol);
-            arsenal.Add(rifle);
-
-            foreach (Weapone x in arsenal)
+            string wep;
+            bool guy1 = true;
+            bool guy2 = true;
+            while (guy1)
             {
-                x.Reload();
-                x.Shoot(1.1, 2.2);
-                x.EmptyMagazine();
-                Console.WriteLine();
+                Console.WriteLine("choose weapone: Awp for sniper, Colt for pistol, Uzi for smg");//for wapone choose
+                wep = Console.ReadLine();
+                switch (wep)
+                {
+                    case "Awp":
+                        Weapone g = new Weapone("Awp", 10);
+                        guy1 = false;
+                        break;
+                    case "Colt":
+                        Weapone g = new Weapone("Colt", 10);
+                        guy1 = false;
+                        break;
+                    case "Uzi":
+                        Weapone g = new Weapone("Uzi", 10);
+                        guy1 = false;
+                        break;
+                    default:
+                        Console.WriteLine("try again");
+                        break;
+                }
             }
+            
+            while (guy2) 
+            {
+                Console.WriteLine("lets get play");//for play
+                wep = Console.ReadLine();
+                switch (wep)
+                {
+                    case "f":
+                        g.shoot();
+                        break;
+                    case "r":
+                        g.Reload();
+                        break;
+                    case "e":
+                        g.EmptyMAgazine();
+                        break;
+                    default:
+                        Console.WriteLine("try again");
+                        break;
+                }
+                
+            }
+            
         }
     }
 }

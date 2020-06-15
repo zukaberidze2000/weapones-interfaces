@@ -6,7 +6,7 @@ namespace ProjN3
 {
     interface Functions
     {
-        void Shoot(double x,double y);
+        void Shoot();
         void Reload();
         void EmptyMagazine();
     }
