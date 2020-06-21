@@ -6,9 +6,10 @@ namespace ProjN3
 {
     class Weapone : Functions
     { 
-        string name { get; set; } // name of weapone
+        public string name { get; set; } // name of weapone
         List<Bullet> magazine; //magazine
         int bulletNum { get; set; } // number of bullets  
+        public bool IsActive { get; set; }
         public Weapone(string itsname,int x) //contsructor
         {
             Console.WriteLine("you have " + itsname);

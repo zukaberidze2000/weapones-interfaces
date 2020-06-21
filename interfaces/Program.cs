@@ -8,55 +8,22 @@ namespace ProjN3
     {
         static void Main(string[] args)
         {
-            string wep;
-            bool guy1 = true;
-            bool guy2 = true;
-            while (guy1)
+            var PlayerN1 = new Person("leviatani");
+            var m4 = new Weapone("M4", 30);
+            var iz43 = new Weapone("IZ43", 2);
+            var p90 = new Weapone("P90", 50);
+
+            PlayerN1.Weapones.Add(m4);
+            PlayerN1.Weapones.Add(iz43);
+            PlayerN1.Weapones.Add(p90);
+
+            PlayerN1.ChangeWeapone(PlayerN1.Weapones, p90.name);
+            foreach(var weapone in PlayerN1.Weapones)
             {
-                Console.WriteLine("choose weapone: Awp for sniper, Colt for pistol, Uzi for smg");//for wapone choose
-                wep = Console.ReadLine();
-                switch (wep)
-                {
-                    case "Awp":
-                        Weapone g = new Weapone("Awp", 10);
-                        guy1 = false;
-                        break;
-                    case "Colt":
-                        Weapone g = new Weapone("Colt", 10);
-                        guy1 = false;
-                        break;
-                    case "Uzi":
-                        Weapone g = new Weapone("Uzi", 10);
-                        guy1 = false;
-                        break;
-                    default:
-                        Console.WriteLine("try again");
-                        break;
-                }
+                Console.WriteLine(weapone.name);
+                Console.WriteLine(weapone.IsActive);
             }
-            
-            while (guy2) 
-            {
-                Console.WriteLine("lets get play");//for play
-                wep = Console.ReadLine();
-                switch (wep)
-                {
-                    case "f":
-                        g.shoot();
-                        break;
-                    case "r":
-                        g.Reload();
-                        break;
-                    case "e":
-                        g.EmptyMAgazine();
-                        break;
-                    default:
-                        Console.WriteLine("try again");
-                        break;
-                }
-                
-            }
-            
+            Console.ReadKey();
         }
     }
 }
